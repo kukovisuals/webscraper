@@ -1,0 +1,56 @@
+$dark_background: #060607;
+$light_gray:#2D3038;
+$strong_font: #F2F3F6;
+$light_font: #D0D1D3;
+$card_gradient: linear-gradient(340deg, rgb(45, 48, 56) 58%, rgb(6, 6, 7) 137%);
+
+.grid_component_container{
+  margin: 0.6rem;
+  /*border: 1px solid black;*/
+  font-family: 'Helvetica Neue',sans-serif;
+
+  .grid_component_wrapper{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    // border: 1px solid red;
+    margin: 0.5rem 0;
+    border-radius: 15px;
+    background: $card_gradient;
+
+    .grid_component_item1{
+      width: 60%;
+      font-size: 1.2rem;
+      color: $strong_font;
+      margin-top: 0.6rem;
+      margin-left: 0.6rem;
+    }
+    .grid_component_item2{
+      width: 30%;
+      font-size: 0.9rem;
+      text-align: end;
+      color: $light_font;
+      margin-top: 0.6rem;
+      margin-right: 0.6rem;
+    }
+    .grid_component_item3{
+      width: 90%;
+      font-size: 0.5rem;
+      color: $light_font;
+      margin: 0.4rem 0;
+    }
+    .grid_component_item4{
+      width: 90%;
+      font-size: 0.9rem;
+      color: $strong_font;
+    }
+    .grid_component_item5{
+      width: 90%;
+      font-size: 0.6rem;
+      color: $light_font;
+      margin: 0.2rem 0;
+    }
+  }
+}

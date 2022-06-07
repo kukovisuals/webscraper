@@ -16,7 +16,7 @@ for dj in artist:
 		elements = driver.find_elements(By.XPATH, "//li[@class='Column-sc-18hsrnn-0 kHUYAc']")
 		
 
-		newArtist = {dj:[] }
+		newArtist = {'name': dj, 'events': [], 'length': 1 }
 		for e in elements:
 
 			if e.text != '':
@@ -30,9 +30,10 @@ for dj in artist:
 						newLine = newElement.split('\n')
 
 						p1 = Person(dj,newLine[0], newLine[1],newLine[2],newLine[3],newLine[4])
-						newArtist[dj].append( p1.writeJson() )
-
-
+						newArtist['events'].append( p1.writeJson() )
+						newArtist['length'] = newArtist['length'] + 1
+						#add length of total results
+						
 		with open('api/' + dj + '.json', 'w+') as json_file:
 			json.dump(newArtist, json_file)
 		
