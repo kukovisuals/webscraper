@@ -37,6 +37,7 @@ for dj in artist:
 		with open('api/' + dj + '.json', 'w+') as json_file:
 			json.dump(newArtist, json_file)
 		
+		print(newArtist)
 		allArtist.append(newArtist)
 		
 		return newElement
@@ -44,7 +45,6 @@ for dj in artist:
 	driver.get("https://ra.co/dj/" + dj +"/tour-dates")
 	WebDriverWait(driver, timeout=10).until(document_initialised)
 
-	
 	with open('api/main.json', 'w+') as json_file:
 		json.dump(allArtist, json_file)
 

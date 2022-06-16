@@ -40,7 +40,7 @@ for dj in artist:
 						print( dj + ' is coming to the US \n' )
 						print(newElement)
 					else: 
-						textFile.write('no parties yet' + '\n')						
+						textFile.write('-' + '\n')						
 
 		return newElement
 
