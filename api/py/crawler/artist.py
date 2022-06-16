@@ -4,7 +4,7 @@ def Converter(str):
 
 def artistFromText():
 
-	with open('artistName.txt') as f: 
+	with open('api/py/crawler/artistName.txt') as f: 
 		artistNames = f.read()
 
 	return Converter(artistNames)

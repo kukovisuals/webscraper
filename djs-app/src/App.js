@@ -1,16 +1,16 @@
-// import {useEffect, useState} from 'react';
-// import axios from 'axios';
+import {useEffect, useState} from 'react';
+import axios from 'axios';
 import './style.scss';
-import data from './data/data.json';
+// import data from './data/data.json';
 
 function App() {
-  // const [data, setData] = useState()
+  const [data, setData] = useState()
 
-  // useEffect(() => {
-    // axios('http://localhost:9000/api/v1/main')
-    //   .then(res => setData(res.data.parties)  )
-    //   .catch(err => console.error(err))
-  // },[])
+  useEffect(() => {
+    axios('http://localhost:9000/api/v1/main')
+      .then(res => setData(res.data.parties)  )
+      .catch(err => console.error(err))
+  },[])
 
   return (
     <div className="App">
@@ -26,7 +26,7 @@ const GridComponent = ({list, artist}) => {
   if(list.length === 0){
     return
   }
-  console.log(list)
+  // console.log(list)
   return(    
     <div className="grid_component_container">
       {list.map( d => <GridWrapper key={d.place} list={d} artist={artist} /> )}
