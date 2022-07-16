@@ -1,0 +1,32 @@
+service: chrome-layer
+
+provider:
+  name: aws
+  runtime: python3.6
+  region: ap-southeast-1
+  timeout: 900
+
+layers:
+    chromedriver:
+    path: chromedriver
+    description: chrome driver layer
+    CompatibleRuntimes: [
+      "python3.6"
+    ]
+
+
+resources:
+  Outputs:
+    ChromedriverLayerExport:
+      Value:
+        Ref: ChromedriverLambdaLayer
+      Export:
+        Name: ChromedriverLambdaLayer
+
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux

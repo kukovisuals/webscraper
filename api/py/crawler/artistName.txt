@@ -5,7 +5,6 @@ richiehawtin
 stevelawler
 lane8
 yotto
-elifur
 nto
 ness
 kwartz
@@ -23,4 +22,4 @@ claracuve
 charliesparks
 djanna
 rebekah
-ricardovillalobos
+benklock

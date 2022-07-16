@@ -15,54 +15,57 @@ function App() {
   return (
     <div className="App">
       {data && 
-        data.map( d =>  <GridComponent key={d.name} list={d.events} artist={d.name} /> )
+        data.map( d =>  <GridComponent key={d.name} artist={d}  /> )
       }
     </div>
   );
 }
 
-const GridComponent = ({list, artist}) => {
+const GridComponent = ({artist}) => {
 
-  if(list.length === 0){
+  if(artist.length === 0){
     return
   }
-  // console.log(list)
+  console.log(artist)
   return(    
     <div className="grid_component_container">
-      {list.map( d => <GridWrapper key={d.place} list={d} artist={artist} /> )}
+      {artist.events.map( d => <GridWrapper key={d.place} artist={artist.name} artistData={d} imagen={artist.imagen} /> )}
     </div>
   )
 }
 
-const GridWrapper = ({list, artist}) => (
+const GridWrapper = ({artist, artistData, imagen}) => (
   <div className="grid_component_wrapper">        
     <div className="grid_component_item1">
       <span>
         {artist.toUpperCase()}
       </span>
     </div>
+     <div className="grid_component_item">
+      <img src={imagen} alt={artist}/>
+    </div>
 
     <div className="grid_component_item2">
       <span>
-        {list.day}
+        {artistData.day}
       </span>
     </div>
 
     <div className="grid_component_item3">
       <span>
-        {condensar(list.artist)}
+        {condensar(artistData.artist)}
       </span>
     </div>
 
     <div className="grid_component_item4">
       <span>
-        {list.city}
+        {artistData.city}
       </span>
     </div>
 
     <div className="grid_component_item5">
       <span>
-        {list.place}
+        {artistData.place}
       </span>
     </div>
   </div>

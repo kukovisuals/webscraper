@@ -2,55 +2,92 @@ $dark_background: #060607;
 $light_gray:#2D3038;
 $strong_font: #F2F3F6;
 $light_font: #D0D1D3;
+$border_color: 13px 12px 11px -3px #212328, -13px -12px 10px -10px #38383e;
 $card_gradient: linear-gradient(340deg, rgb(45, 48, 56) 58%, rgb(6, 6, 7) 137%);
 
+.App{
+  width: 95%;
+  margin: 0 auto;
+}
 .grid_component_container{
-  margin: 0.6rem;
   /*border: 1px solid black;*/
   font-family: 'Helvetica Neue',sans-serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  // margin-top:1.5rem;
 
   .grid_component_wrapper{
+    width: 43%;
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    // border: 1px solid red;
-    margin: 0.5rem 0;
+    gap: 0.6rem;
+    padding: 0.5rem;
     border-radius: 15px;
-    background: $card_gradient;
+    box-shadow: $border_color;
+    margin-top: 1.2rem;
 
     .grid_component_item1{
-      width: 60%;
-      font-size: 1.2rem;
+      // width: 60%;
+      font-size: 0.8rem;
       color: $strong_font;
-      margin-top: 0.6rem;
-      margin-left: 0.6rem;
     }
     .grid_component_item2{
-      width: 30%;
-      font-size: 0.9rem;
+      font-size: 0.6rem;
       text-align: end;
       color: $light_font;
-      margin-top: 0.6rem;
-      margin-right: 0.6rem;
     }
-    .grid_component_item3{
+    .grid_component_item3,
+      .grid_component_item5{
       width: 90%;
       font-size: 0.5rem;
       color: $light_font;
-      margin: 0.4rem 0;
     }
     .grid_component_item4{
       width: 90%;
-      font-size: 0.9rem;
+      font-size: 0.6rem;
       color: $strong_font;
     }
-    .grid_component_item5{
-      width: 90%;
-      font-size: 0.6rem;
-      color: $light_font;
-      margin: 0.2rem 0;
+  }
+}
+img{
+
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 600px) {
+
+  .grid_component_container{
+    gap: 2rem;
+    justify-content: left;
+    
+    .grid_component_wrapper{
+      width: 29%;
+      margin-top: 1.5rem;
+
+      .grid_component_item1{
+        width: 49%;
+        font-size: 1.1rem;
+      }
+      .grid_component_item2{
+        width: 30%;
+      }
+      .grid_component_item2,
+       .grid_component_item4{
+        font-size: 0.8rem;
+      }
+      .grid_component_item3,
+        .grid_component_item5{
+        font-size: 0.7rem;
+      }
     }
   }
+
+
 }
